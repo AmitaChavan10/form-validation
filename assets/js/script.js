@@ -32,13 +32,13 @@ function validate() {
     // email
     if(emailVal === "") {
         setErrorMsg(email, "Email cannot be blank");
-    } else if(isEmail(emailVal)) {
+    } else if(!isEmail(emailVal)) {
         setErrorMsg(emailVal, "Not a valid email");
     } else {
         setSuccessMsg(email);
     }
 
-    function isEmail(value) {
+    function isEmail(emailVal) {
         var atSymbol = emailVal.indexOf("@");
         if(atSymbol < 1) return false;
         var dot = emailVal.lastIndexOf(".");
